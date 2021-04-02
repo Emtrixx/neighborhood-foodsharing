@@ -1,2 +1,2 @@
 # neighborhood-foodsharing
-Projekt für das Modul **Angewandte Programmierung** S21 and HAW Hamburg
+Projekt für das Modul **Angewandte Programmierung** S21 an der HAW Hamburg
