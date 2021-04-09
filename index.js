@@ -10,6 +10,8 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
 app.use(express.static(__dirname+'/public'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 app.get('/', (req,res) => {
     res.render('home');
@@ -19,8 +21,9 @@ app.get('/login', (req,res) => {
     res.render('user/login');
 })
 
-app.get('/loginCheck', (req,res) => {
-    if(auth.anmeldungErfolgreich(req.query.benutzername,req.query.passwort)){
+app.post('/login', (req,res) => {
+    console.dir(req.body)
+    if(auth.anmeldungErfolgreich(req.body.benutzername,req.body.passwort)){
         res.send("Yes")
     } else {
         res.send("No")
