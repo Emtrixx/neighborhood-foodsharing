@@ -23,10 +23,13 @@ app.get('/login', (req,res) => {
 
 app.post('/login', (req,res) => {
     console.dir(req.body)
+    if(!benutzerExistiert(req.body.benutzername)) {
+        res.send("Benutzer existiert nicht")
+    }
     if(auth.anmeldungErfolgreich(req.body.benutzername,req.body.passwort)){
-        res.send("Yes")
+        res.send("Anmeldung erfolgreich")
     } else {
-        res.send("No")
+        res.send("Anmeldung fehlgeschlagen")
     }
 })
 
