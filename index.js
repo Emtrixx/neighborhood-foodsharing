@@ -22,15 +22,20 @@ app.get('/login', (req,res) => {
 })
 
 app.post('/login', (req,res) => {
-    console.dir(req.body)
-    if(!benutzerExistiert(req.body.benutzername)) {
-        res.send("Benutzer existiert nicht")
-    }
-    if(auth.anmeldungErfolgreich(req.body.benutzername,req.body.passwort)){
-        res.send("Anmeldung erfolgreich")
-    } else {
-        res.send("Anmeldung fehlgeschlagen")
-    }
+    auth.benutzerExistiert(req.body.username, success => {
+        if(!success) {
+            return res.send("Benutzer existiert nicht");
+        } else {
+            auth.anmeldungErfolgreich(req.body.username,req.body.password, success => {
+                if(success) {
+                    return res.send("Anmeldung erfolreich");
+                } else {
+                    return res.send("Anmeldung fehlgeschlagen");
+                }
+            })
+        }
+    }) 
+    
 })
 
 app.listen('3000', () => {
