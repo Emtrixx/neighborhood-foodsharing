@@ -38,6 +38,12 @@ app.post('/login', (req,res) => {
     
 })
 
+// Error Handling: Not found – Call this last!
+app.use(function(req, res) {
+    res.status(404).render('error');
+});
+
+// Start Server
 app.listen('3000', () => {
     console.log("Listening port 3000");
 })
