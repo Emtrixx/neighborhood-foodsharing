@@ -1,0 +1,45 @@
+<%- layout('layouts/boilerplate.ejs') %> 
+
+<h1>Beispielangebot</h1>
+
+<p>So könnte ein Angebot aussehen:</p>
+
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+	<h2>Titel</h2>
+
+	<div id="foodCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#foodCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#foodCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#foodCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="https://picsum.photos/id/102/960/480" class="d-block w-100" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="https://picsum.photos/id/101/960/480" class="d-block w-100" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="https://picsum.photos/id/1025/960/480" class="d-block w-100" alt="">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#foodCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#foodCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
+	
+	<h4>Kontakt</h4>
+	<p>Name und Bewertung</p>
+	<p>Karte und Kontaktdaten</p>
+	
+	<button type="button" class="btn btn-primary btn-lg">Angebot reservieren</button>
+	<button type="button" class="btn btn-outline-danger btn-sm">Angebot melden</button>
+</div>

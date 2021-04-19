@@ -38,6 +38,10 @@ app.post('/login', (req,res) => {
     
 })
 
+app.get('/offer', (req,res) => {
+    res.render('food/offer');
+})
+
 // Error Handling: Not found – Call this last!
 app.use(function(req, res) {
     res.status(404).render('error');
